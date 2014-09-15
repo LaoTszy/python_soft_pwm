@@ -7,7 +7,7 @@ Yet another implementation of PWM in Python. I needed it for playing with Raspbe
 
 This implementation is quite pricese, because it does not rely on the exactness of timers, it just adopts to whatever it gets. At a price of processor power of cause: on Pi it uses all the free processor time. 
 
-The algorithm is quite simple: it tries to wake up every 5 msec (the default slice), keeping the records of how long the managed component was on and for how long it was off and depeneding on the current ration of these times it desides to switch it on or off for the next slice. Then it goes to sleep until the next timer event.
+The algorithm is quite simple: it tries to wake up every 4 msec (the default slice, you can change it by setting  `PulseWidthModulator.Slice` to some other value in seconds), keeping the records of how long the managed component was on and for how long it was off and depeneding on the current ration of these times it desides to switch it on or off for the next slice. Then it goes to sleep until the next timer event.
 
 Here is the example usage with RPi.GPIO:
 
